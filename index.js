@@ -7,7 +7,6 @@ function newImage(url, left, bottom){
     document.body.append(image)
     return image
 }
-
 let character = newImage('assets/green-character.gif', 100, 250)
 newImage('assets/tree.png', 200, 450)
 newImage('assets/pillar.png', 350, 250)
@@ -53,12 +52,39 @@ const inventory = newInventory()
 function move(image){
     image.style.position = "fixed"
 
-function moveToCoordinates(image, left, bottom){
+function moveToCoordinates(left, bottom){
     image.style.left = left + 'px'
     image.style.bottom = bottom + 'px'
     }
     return {
-        to: moveCoordinates 
+        to: moveToCoordinates 
     }
 }
-move(character).to(300, 750)
+move(character).to(400, 750)
+
+function moveCharacter(){
+   let direction = null;
+    let x = 100;
+    let y = 250;
+
+if(direction === 'west'){
+    x = x - 1
+}
+if(direction === 'north'){
+    y = y + 1
+}
+if(direction === 'east'){
+    x = x + 1
+}
+if(direction === 'south'){
+    y = y - 1
+}
+character.style.left = x + 'px'
+character.style.bottom = y + 'px'
+}
+function setInterval(moveCharacter, 1000){
+   function moveCharacter(){
+    
+   }
+}
+setInterval(moveCharacter, 1)     
